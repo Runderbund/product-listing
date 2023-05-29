@@ -1,0 +1,12 @@
+.cardDisplay {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Grid layout with 3 equal columns. 1 fr = 1 fraction (equal portion of screen)*/
+    row-gap: 100px; /* Gap between grid rows */
+    padding-bottom: 1em; /* Space between bottom of grid and bottom of screen */
+    width: 100%;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-items: center; /* Centers cards in grid */
+  }
+  
+  

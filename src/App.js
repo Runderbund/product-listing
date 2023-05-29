@@ -2,13 +2,11 @@ import React, { useState, useEffect } from "react";
 import styles from "./App.module.css"; // Using modular CSS for this project
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
-import ProductCard from './Components/ProductCard/ProductCard';// For testing, will go in CardDisplay later
-
+import CardDisplay from "./Components/CardDisplay/CardDisplay";
 
 function App() {
   const [displayedProducts, setDisplayedProducts] = useState([]);
   const [products, setProducts] = useState([]);
-
 
   const fetchData = () => {
     fetch("./data.json")
@@ -24,6 +22,10 @@ function App() {
     fetchData();
   }, [fetchData]);
 
+  useEffect(() => {
+    setDisplayedProducts(products);
+  }, [products]);
+
   return (
     <div className={styles.app}>
       <Header />
@@ -32,8 +34,7 @@ function App() {
         <h1>Stuff</h1>
         <h1>Stuff</h1>
         <h1>Stuff</h1>
-        {products.length > 0 && <ProductCard product={products[0]} />} {/* Render first product */}
-
+        <CardDisplay products={displayedProducts} />
       </main>
       <Footer />
     </div>
