@@ -1,6 +1,15 @@
 import React from "react";
 import styles from "./Pagination.module.css";
 
+/**
+ * A component that sets the number of products per page and the current page.
+ *
+ * @param {number} currentPage - The currently viewed page.
+ * @param {Function} setCurrentPage - Function to update the currentPage state.
+ * @param {number} totalPages - The total number of pages, based on the number of products and productsPerPage.
+ * @param {number} productsPerPage - Sets the number of products per page.
+ * @param {Function} setProductsPerPage - Function to update the productsPerPage state.
+ */
 const Pagination = ({
   currentPage,
   setCurrentPage,
@@ -51,7 +60,7 @@ const Pagination = ({
         <option value="5">5 per page</option>
         <option value="10">10 per page</option>
         <option value="100">100 per page</option>
-        {/* 100 is effectively all, since there are only 30 products. Not sure how to do unlimited. */}
+        {/* 100 is effectively all, since there are only 30 products. */}
       </select>
     </div>
   );

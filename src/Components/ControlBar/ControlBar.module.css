@@ -1,8 +1,8 @@
 .controlBar {
-    background-color: #d1e0e8;
-    position: sticky;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1em;
-  }
+  background-color: #d1e0e8;
+  position: sticky;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em;
+}
