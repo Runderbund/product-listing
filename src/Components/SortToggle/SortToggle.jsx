@@ -14,6 +14,7 @@ const SortToggle = ({ sort, setSort, order, setOrder }) => {
   return (
     <div className={styles.sortToggle}>
       <select value={sort} onChange={handleSortChange}>
+        <option value="id">Default (ID)</option>
         <option value="title">Product Name</option>
         <option value="brand">Brand Name</option>
         <option value="price">Price</option>

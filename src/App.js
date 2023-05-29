@@ -42,6 +42,27 @@ function App() {
           );
         }
 
+        sortedProducts.sort((a, b) => {
+          if (sort === "id") {
+            return a.id - b.id;
+          } else if (sort === "title") {
+            return a.title.localeCompare(b.title);
+            // localeCompare allows case-insensitive comparison between two strings (a, b)
+            // Returns <0, 0, or >0, depending on whether a is before, equal to, or after b, and assigns index based on that.
+          } else if (sort === "rating") {
+            return a.rating - b.rating;
+          } else if (sort === "brand") {
+            return a.brand.localeCompare(b.brand);
+          } else if (sort === "price") {
+            return a.price - b.price;
+          }
+        });
+        
+
+        if (order === "desc") {
+          sortedProducts.reverse();
+        }
+
         setProducts(sortedProducts);
 
       });
