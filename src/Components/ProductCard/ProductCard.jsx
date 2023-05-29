@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./ProductCard.module.css";
 import StarRatings from 'react-star-ratings'; //npm install --save react-star-ratings
+import Carousel from '../Carousel/Carousel';
+
 
 const ProductCard = ({ product }) => {
   const { title, brand, category, stock, rating, images, price } = product;
@@ -8,8 +10,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <div className={styles.productCard}>
-      <img src={images[0]} alt={title} />
-      {/* Takes first image. Replace with Carousel. */}
+      <Carousel images={images} alt={title}/>
       <div className={styles.center}>
         <h3>{title}</h3>
         <p>{brand}</p>

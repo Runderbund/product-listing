@@ -45,10 +45,10 @@ function App() {
         sortedProducts.sort((a, b) => {
           if (sort === "id") {
             return a.id - b.id;
+            // Returns <0, 0, or >0, depending on whether a is before, equal to, or after b, and assigns index based on that.
           } else if (sort === "title") {
             return a.title.localeCompare(b.title);
             // localeCompare allows case-insensitive comparison between two strings (a, b)
-            // Returns <0, 0, or >0, depending on whether a is before, equal to, or after b, and assigns index based on that.
           } else if (sort === "rating") {
             return a.rating - b.rating;
           } else if (sort === "brand") {
@@ -98,3 +98,7 @@ function App() {
 }
 
 export default App;
+
+//TODO: Make number of cards vary between 2 and 5 depending on screen width
+//TODO: Line up cards heights with 1 and 2 line names.
+//TODO: Choose a better image frame for the cards.

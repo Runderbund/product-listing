@@ -1,0 +1,29 @@
+.carousel {
+    position: relative;
+  }
+  
+  .carousel button {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(255,255,255);
+    border: none;
+    opacity: 0; /* Sets arrow boxes to be invisible until the mouse is over the image */
+    transition: opacity 0.2s ease-in-out; /* Sets to transition arrows in, instead of appearing instantly */
+  }
+  
+  .carousel:hover button {
+    opacity: .35; /* Sets arrow boxes to be semi-transparent */
+  }
+  
+  .carousel img {
+    max-width: 100%;
+  }
+  
+  .carousel button:nth-child(1) {
+    left: 0.5em;
+  }
+  
+  .carousel button:nth-child(3) { /* Sets right arrow near the right side of the image. nth-child(3) counts all child elements of carousel, including img, not just buttons */
+    right: 0.5em;
+  }
+  
