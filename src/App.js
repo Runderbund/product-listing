@@ -4,6 +4,8 @@ import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import CardDisplay from "./Components/CardDisplay/CardDisplay";
 import ControlBar from "./Components/ControlBar/ControlBar";
+import Pagination from "./Components/Pagination/Pagination";
+
 
 function App() {
   const [displayedProducts, setDisplayedProducts] = useState([]);
@@ -13,6 +15,9 @@ function App() {
   const [sort, setSort] = useState("name");
   const [order, setOrder] = useState("asc");
   const [search, setSearch] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
+  const [productsPerPage, setProductsPerPage] = useState(10);
 
   const fetchData = () => {
     fetch("./data.json")
@@ -62,7 +67,9 @@ function App() {
         if (order === "desc") {
           sortedProducts.reverse();
         }
-
+        
+        // After sorting and filtering, update the total number of pages
+        setTotalPages(Math.ceil(sortedProducts.length / productsPerPage));
         setProducts(sortedProducts);
 
       });
@@ -70,11 +77,14 @@ function App() {
 
   useEffect(() => {
     fetchData();
+    // Re-calls fetchData() whenever any of the following change:
   }, [brands, category, sort, order, search, fetchData]);
 
   useEffect(() => {
-    setDisplayedProducts(products);
-  }, [products]);
+    const start = (currentPage - 1) * productsPerPage;
+    setDisplayedProducts(products.slice(start, start + productsPerPage));
+    // Re-calls setDisplayedProducts() whenever any of the following change:
+  }, [products, currentPage, productsPerPage]);
 
   return (
     <div className={styles.app}>
@@ -92,6 +102,13 @@ function App() {
         />
         <CardDisplay products={displayedProducts} />
       </main>
+      <Pagination
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+        totalPages={totalPages}
+        productsPerPage={productsPerPage}
+        setProductsPerPage={setProductsPerPage}
+      />
       <Footer />
     </div>
   );

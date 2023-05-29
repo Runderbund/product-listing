@@ -1,0 +1,9 @@
+.pagination {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    background-color: #d1e8e2;
+  }
+  
