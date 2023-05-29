@@ -1,12 +1,17 @@
 import{ useState } from 'react';
-import "./App.css";
+import styles from "./App.module.css"; // Using modular CSS for this project
 import data from "./data/data.json";
+import Header from "./Components/Header/Header";
+import Footer from './Components/Footer/Footer';
+
 
 function App() {
-  const [allProducts, setAllProducts] = useState(data); // "Gotcha", "not quite in a useable state"
+  const [displayedProducts, setDisplayedProducts] = useState([]);
+
   return (
     <div>
-      <h1>Hello, Student!</h1>
+      <Header />
+      <Footer /> {/* Currently hidden behind fixed header */}
     </div>
   );
 }
