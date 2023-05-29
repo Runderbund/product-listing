@@ -10,6 +10,7 @@ function App() {
   const [displayedProducts, setDisplayedProducts] = useState([]);
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState("");
+  const [brands, setBrands] = useState([]);
 
 
   const fetchData = () => {

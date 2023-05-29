@@ -1,0 +1,13 @@
+.brandSelect {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto;
+    background-color: #d1e8e2;
+    margin-top: 1em;
+  }
+  
+  .instructions {
+    font-size: 0.8em;
+    color: #333;
+  }

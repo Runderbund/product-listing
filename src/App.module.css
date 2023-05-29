@@ -6,7 +6,7 @@
   }
   
   .main {
-    background-color: #d1e8e2; /* Pale blue */
+    background-color: #d1e0e8;
     flex-grow: 1;
     overflow: auto;
     margin-top: 3em; /* Kludge to keep stuff from going behind the fixed header */
