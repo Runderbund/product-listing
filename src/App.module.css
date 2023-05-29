@@ -1,0 +1,14 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; 
+    overflow: hidden; 
+  }
+  
+  .main {
+    background-color: #d1e8e2; /* Pale blue */
+    flex-grow: 1;
+    overflow: auto;
+    margin-top: 3em; /* Kludge to keep stuff from going behind the fixed header */
+  }
+  
