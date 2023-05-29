@@ -30,10 +30,6 @@ function App() {
     <div className={styles.app}>
       <Header />
       <main className={styles.main}>
-        <h1>Stuff</h1>
-        <h1>Stuff</h1>
-        <h1>Stuff</h1>
-        <h1>Stuff</h1>
         <CardDisplay products={displayedProducts} />
       </main>
       <Footer />
