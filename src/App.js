@@ -3,10 +3,14 @@ import styles from "./App.module.css"; // Using modular CSS for this project
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import CardDisplay from "./Components/CardDisplay/CardDisplay";
+import ControlBar from "./Components/ControlBar/ControlBar";
+
 
 function App() {
   const [displayedProducts, setDisplayedProducts] = useState([]);
   const [products, setProducts] = useState([]);
+  const [category, setCategory] = useState("");
+
 
   const fetchData = () => {
     fetch("./data.json")
@@ -30,6 +34,10 @@ function App() {
     <div className={styles.app}>
       <Header />
       <main className={styles.main}>
+        <ControlBar
+            category={category}
+            setCategory={setCategory}
+          />
         <CardDisplay products={displayedProducts} />
       </main>
       <Footer />

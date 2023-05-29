@@ -1,0 +1,8 @@
+.controlBar {
+    background-color: #d1e8e2; /* Pale blue */
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1em;
+  }
