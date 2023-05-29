@@ -27,13 +27,29 @@ function App() {
             (product) => product.category === category
           );
         }
+
+        // Filter products by search query, if one exists
+        if (search !== "") {
+          sortedProducts = sortedProducts.filter((product) =>
+            product.title.toLowerCase().includes(search.toLowerCase())
+          );
+        }
+
+        // Filter products by brands, if one or more selected
+        if (brands.length > 0 && !brands.includes('Show All Brands')) {
+          sortedProducts = sortedProducts.filter((product) =>
+            brands.includes(product.brand)
+          );
+        }
+
         setProducts(sortedProducts);
+
       });
   };
 
   useEffect(() => {
     fetchData();
-  }, [category, sort, order, search, fetchData]);
+  }, [brands, category, sort, order, search, fetchData]);
 
   useEffect(() => {
     setDisplayedProducts(products);
@@ -41,7 +57,7 @@ function App() {
 
   return (
     <div className={styles.app}>
-      <Header />
+      <Header search={search} setSearch={setSearch}/>
       <main className={styles.main}>
         <ControlBar
           category={category}
